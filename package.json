@@ -1,9 +1,14 @@
 {
   "name": "connect-backend",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.ts",
+    "build": "tsc",
+    "serve": "node dist/app.js",
+    "tsc": "tsc"
+  },
+  "engines": {
+    "node": ">=8.10.0"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +18,14 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "mongoose": "^8.7.3"
+    "mongoose": "^8.7.3",
+    "nodemon": "^3.1.7"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
   }
 }
