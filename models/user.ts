@@ -1,17 +1,16 @@
 import mongoose from "mongoose";
 
-const clientSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   createdAt: { type: Date },
+  lastLogin: { type: Date },
   fullName: { type: String },
   email: { type: String },
-  password: { type: String },
   phoneNumber: { type: String },
-  emailVerified: { type: Boolean },
   role: { type: String },
   gender: { type: String },
   year: { type: String },
   profilePic: { type: String },
-  aboutMe: { type: String },
+  bio: { type: String },
   course: { type: String },
   institute: {
     id: { type: String },
@@ -23,4 +22,4 @@ const clientSchema = new mongoose.Schema({
   intrestedFields: { type: [String] },
 });
 
-export default mongoose.model("clients", clientSchema);
+export default mongoose.model("users", userSchema);

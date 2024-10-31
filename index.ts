@@ -1,3 +1,4 @@
+import authRoutes from "./routes/auth.js";
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
@@ -13,7 +14,7 @@ app.use(bodyParser.json({ limit: "30mb" }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 // routes
-// app.use("/", authRoutes);
+app.use("/auth", authRoutes);
 
 
 app.get("/", (req, res) => {
@@ -27,7 +28,7 @@ const PORT = process.env.PORT || 5000;
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGO_URL || "mongodb://0.0.0.0:27017/elderwand", {
+  .connect(process.env.MONGO_URL || "mongodb://0.0.0.0:27017/connect-cek", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   } as ConnectOptions)
